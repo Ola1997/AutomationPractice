@@ -1,0 +1,13 @@
+{
+    "baseUrl": "http://automationpractice.com/index.php",
+    "env": {
+     "TEST_USER_LOGIN": "TEST_USER_LOGIN",
+     "NO_ACCESS_USER_LOGIN": "NO_ACCESS_USER_LOGIN",
+     "TEST_USER_PASSWORD": "TEST_USER_PASSWORD"
+     },
+     "viewportWidth": 1024,
+     "viewportHeight": 768,
+     "defaultCommandTimeout" : 10000,
+     "requestTimeout" : 10000,
+     "screenshotsFolder" : "xyz/screenshots"
+ }

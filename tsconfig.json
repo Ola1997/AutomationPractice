@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "baseUrl": "http://automationpractice.com/index.php",
+      "target": "es5",
+      "lib": ["es5", "dom"],
+      "types": ["cypress"]
+    },
+    "include": [
+      "**/*.ts"
+, "cypress/integration/Register/Failedregistering.test.js"    ]
+  }
