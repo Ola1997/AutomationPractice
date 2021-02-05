@@ -27,4 +27,4 @@ describe("tests that sends message to input unsuccessfully", () => {
 function newsletterRejection() {
     cy.get('[name=submitNewsletter]').click()
     cy.get('.alert').contains("Newsletter : Invalid email address.")
-}
+} 

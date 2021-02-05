@@ -12,7 +12,7 @@ describe("tests with failing login in", () => {
                 unsuccessfulAlert()
         })
         it("should write an e-mail without '.com'", () => {
-                cy.get('#email_create').type("random@")
+                cy.get('#email_create').type("random@") 
                 submitCreate()
                 unsuccessfulAlert()
         })

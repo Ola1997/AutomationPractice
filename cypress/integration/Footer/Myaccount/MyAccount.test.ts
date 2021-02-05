@@ -2,8 +2,7 @@
 import * as helper from '../../../support/commands'
 beforeEach("opens the main webpage",() => {
     cy.visit('/')
-    
-})
+   })
 describe ("tests opening pages from My account category",()=>{
     context("from footer",()=>{
         it("should load 'my orders' subpage",()=>{

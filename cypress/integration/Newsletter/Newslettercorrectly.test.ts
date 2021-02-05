@@ -19,4 +19,4 @@ function joinNewsletter() {
 
 function newsletterConfirmation() {
     cy.get('.alert').contains(" Newsletter : This email address is already registered.")
-}
+} 

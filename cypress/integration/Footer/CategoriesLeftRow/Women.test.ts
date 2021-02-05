@@ -9,9 +9,10 @@ describe ("tests women categories",()=>{
         openWomenCategories()
         })
     })
-})
+}) 
 
 function openWomenCategories(){
     cy.get(".footer-block").contains("Women").click()
     cy.get(".page-heading").contains("Women")
 }
+ 
