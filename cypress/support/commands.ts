@@ -23,6 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+/// <reference types="cypress" />
 export function opensMainWebpage() {
     cy.visit("/")
 }
@@ -34,6 +36,5 @@ export function openSignin() {
     cy.get(".login").click()
 }
 export function openWomenSubpage() {
-    cy.visit("http://automationpractice.com/index.php")
-    cy.contains('Women').click()
+    cy.get(".sf-menu>li:first").click()
 }

@@ -28,17 +28,16 @@ describe ("tests opening pages from My account category",()=>{
 })
 
 function openOrdersCategory(){
-    cy.contains("My orders").click()
+    cy.get('[title="My orders"]').click()
 }
-
 function openCreditSlipsCategory(){
-    cy.contains("My credit slips").click()
+    cy.get('[title="My credit slips"]').click()
 }
 function openMyaddressesCategory(){
-    cy.contains("My addresses").click()
+    cy.get('[title="My addresses"]').click()
 }
 function openPersonalInfoCategory(){
-    cy.contains("My personal info").click()
+    cy.get('[title="Manage my personal information"]').click()
 }
 function authentication(){
     cy.get(".page-heading").should("have.text","Authentication")

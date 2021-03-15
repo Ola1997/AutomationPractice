@@ -1,8 +1,7 @@
 /// <reference types="Cypress" />
 import * as helper from '../support/commands'
 
-beforeEach("", () => {
-    cy.visit('/')
+beforeEach("get to the catalog page", () => {
     helper.openWomenSubpage()
 })
 describe("tests catalog of products", () => {
@@ -32,7 +31,6 @@ describe("tests catalog of products", () => {
         }
     }
 
-
     function fromLowestToHighest() {
         cy
             .get('#selectProductSort')
@@ -51,8 +49,8 @@ describe("tests catalog of products", () => {
     }
 
     function compareProducts() {
-        cy.get('.add_to_compare').first().click()
-        cy.get('.add_to_compare').last().click()
+        cy.get('.add_to_compare:first').click()
+        cy.get('.add_to_compare:last').click()
         if (cy.contains('2')) {
             true
         }

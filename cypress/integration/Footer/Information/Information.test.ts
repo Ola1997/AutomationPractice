@@ -5,63 +5,63 @@ beforeEach("opens the main webpage",() => {
 }) 
 describe ("tests opening pages from Information category",()=>{
     context("from footer",()=>{
-        it("should load 'specials' subpage",()=>{
+        it("should open 'specials' subpage",()=>{
             openSpecialsSubpage()
         })
-        it("should load 'New products' subpage",()=>{
+        it("should open 'New products' subpage",()=>{
             openNewProductsSubpage()
         })
-        it("should load 'Best sellers' subpage",()=>{
+        it("should open 'Best sellers' subpage",()=>{
             bestSellersSubpage()
         })   
-        it("should load 'Our stores' subpage",()=>{
+        it("should open 'Our stores' subpage",()=>{
             ourStoresSubpage()
         }) 
-        it("should load 'Contact us' subpage",()=>{
+        it("should open 'Contact us' subpage",()=>{
             ContactSubpage()
         })
-        it("should load 'Terms and conditions of use' subpage",()=>{
-            termsAndConditions()
+        it("should open 'Terms and conditions of use' subpage",()=>{
+            termsAndConditionsSubpage()
         })
-        it("should load 'About us' subpage",()=>{
+        it("should open 'About us' subpage",()=>{
             abousUsSubpage()
         })
-        it("should load 'Sitemap' subpage",()=>{
+        it("should open 'Sitemap' subpage",()=>{
             sitemapSubpage()
         })
     })
 })     
 function openSpecialsSubpage(){
-    cy.get(".footer-block").contains("Specials").click()
-    cy.get(".page-heading").contains("Price drop")
+    cy.get('[title="Specials"]').click()
+    cy.get(".page-heading").should("have.text","Price drop")
 }
 function openNewProductsSubpage(){
-    cy.get(".footer-block").contains("New products").click()
-    cy.get(".page-heading").contains("New products")
+    cy.get('[title="New products"]').click()
+    cy.get(".page-heading").should("have.text","New products")
 }
 function bestSellersSubpage(){
-    cy.get(".footer-block").contains("Best sellers").click()
-    cy.get(".page-heading").contains("Best sellers")
+    cy.get('[title="Best sellers"]').click()
+    cy.get(".page-heading").should("have.text","Best sellers")
    }
 function ourStoresSubpage(){
-    cy.get(".footer-block").contains("Our stores").click()
-    cy.get(".page-heading").contains("Our store(s)!")
+    cy.get('[title="Our stores"]').click()
+    cy.get(".page-heading").should("have.text","\n\tOur store(s)!\n")
 }
 function ContactSubpage(){
-    cy.get(".footer-block").contains("Contact us").click()
-    cy.get(".page-heading").contains("Contact us")
+    cy.get('[title="Contact us"]').click()
+    cy.contains("Contact us")
 }
 
-function termsAndConditions(){
-    cy.get(".footer-block").contains("Terms and conditions of use").click()
-    cy.get(".page-heading").contains("Terms and conditions of use")
+function termsAndConditionsSubpage(){
+    cy.get('[title="Terms and conditions of use"]').click()
+    cy.get(".page-heading").should("have.text","Terms and conditions of use")
 }
 function abousUsSubpage(){
-    cy.get(".footer-block").contains("About us").click()
-    cy.get(".page-heading").contains("About us")
+    cy.get('[title="About us"]').click()
+    cy.get(".page-heading").should("have.text","About us")
 }
 function sitemapSubpage(){
-    cy.get(".footer-block").contains("Sitemap").click()
-    cy.get(".page-heading").contains("Sitemap")
+    cy.get('[title="Sitemap"]').click()
+    cy.contains("Sitemap")
 }
    

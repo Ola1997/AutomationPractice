@@ -7,17 +7,17 @@ beforeEach("", () => {
 describe("tests with failing login in", () => {
     context("when miswrites the letters", () => {
         it("should write an e-mail without '.at'", () => {
-                cy.get('#email_create').type("random.com")
+                emailInput("random.com")
                 submitCreate()
                 unsuccessfulAlert()
         })
         it("should write an e-mail without '.com'", () => {
-                cy.get('#email_create').type("random@") 
+                emailInput("random@") 
                 submitCreate()
                 unsuccessfulAlert()
         })
         it("should write an e-mail without dot", () => {
-               cy.get('#email_create').type("random@")
+                emailInput("random@com")
                 submitCreate()
                 unsuccessfulAlert()
         }) 
@@ -26,6 +26,9 @@ describe("tests with failing login in", () => {
 
 function submitCreate() {
     cy.get('#SubmitCreate').click()
+}
+function emailInput(phrase:string){
+    cy.get('#email_create').type('string')
 }
 
 function unsuccessfulAlert() {

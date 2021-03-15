@@ -1,18 +1,18 @@
 /// <reference types="Cypress" />
 
-beforeEach("", () => {
+beforeEach("opens main webpage", () => {
     cy.visit("/")
 })
 describe("tests searching functionality", () => {
     context("from Main page",()=>{
         it("should show no results found", () => {
-            findRandom()
+            validateNoResultsAlert()
         })
     })    
 })    
-function findRandom() {
+function validateNoResultsAlert() {
     cy.get("#search_query_top").type("xyz")
     cy.get(".button-search").click()
-    cy.contains("No results were found for your search")
+    cy.get(".alert").contains("No results were found for your search")
 
 }

@@ -1,13 +1,13 @@
 /// <reference types="Cypress" />
 
 import * as helper from '../../support/commands'
-beforeEach(() => {
+beforeEach("opens Main webpage", ()=> {
   cy.visit('/')
 })
 describe("tests related to signing up", () => {
   context("first time", () => {
     it("should create an account", () => {
-      initialRegister()
+      initialRegistration()
       detailedRegistration()
     })
   })
@@ -16,12 +16,11 @@ describe("test attempt to sign in ", () => {
   context("without registering", () => {
     it("should show alert with login failing", () => {
       login()
-      failedSignin()
     })
   })
 })
 
-function initialRegister() {
+function initialRegistration() {
   cy.get(".login").click()
   emailToCreate()
   cy.get("#SubmitCreate").click()
@@ -47,15 +46,12 @@ function detailedRegistration() {
 
 function login() {
   helper.openSignin()
-  cy.get("#email").type("faked@dot.com")
-  cy.get("#passwd").type("1234")
+  cy.get("#email").type("fake@mail.com")
+  cy.get("#passwd").type("Pass123")
   cy.get("#SubmitLogin").click()
+  cy.contains("There is 1 error")
 }
 
 function emailToCreate() {
   cy.get("#email_create").type("fake1@o2.com")
-}
-
-function failedSignin() {
-  cy.contains("There is 1 error")
 }

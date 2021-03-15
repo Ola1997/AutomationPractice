@@ -12,7 +12,7 @@ describe ("tests women categories",()=>{
 }) 
 
 function openWomenCategories(){
-    cy.get(".footer-block").contains("Women").click()
-    cy.get(".page-heading").contains("Women")
+    cy.get(".grower>a").click()
+    cy.contains("Women")
 }
  

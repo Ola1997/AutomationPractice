@@ -1,22 +1,21 @@
 /// <reference types="Cypress" />
 import * as helper from '../../support/commands'
-beforeEach("adds one product", () => {
+import * as help from '../../support/newsletter'
+beforeEach("opens Main webpage", () => {
     cy.visit("/")
 })
 describe("test Newsletter", () => {
     context("when not joined yet", () => {
         it("checks correctly joining to newsletter", () => {
-            joinNewsletter()
-            newsletterConfirmation()
+            joiningToNewsletterConfirmed()
         })
     })
 })
 
-function joinNewsletter() {
-    cy.get("#newsletter-input").type("fake@gmail.com")
+function joiningToNewsletterConfirmed() {
+    help.newsletterInputBracket("fake@gmail.com")
     cy.get('[name=submitNewsletter]').click()
+    cy.get('.alert').should("have.text"," Newsletter : Invalid email address.")
 }
 
-function newsletterConfirmation() {
-    cy.get('.alert').contains(" Newsletter : This email address is already registered.")
-} 
+ 

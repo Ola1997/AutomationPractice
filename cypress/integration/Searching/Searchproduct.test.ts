@@ -1,20 +1,20 @@
 /// <reference types="Cypress" />
 import * as helper from '../../support/commands'
 
-beforeEach("adds one product", () => {
+beforeEach("opens min webpage", () => {
     cy.visit("/")
 })
 describe("test searching results", () => {
-    context("", () => {
+    context("from Main Page", () => {
         it("should find a product", () => {
-            findProduct()
+            findProduct("Printed Dress")
         })
     })
 })
 
-function findProduct() {
-    cy.get("#search_query_top").type("Printed Dress")
+function findProduct(phrase:string) {
+    cy.get("#search_query_top").type("string")
     cy.get(".button-search").click()
-    cy.contains("Printed Dress")
+    cy.get(".product-container").contains("printed dress")
 
 }
